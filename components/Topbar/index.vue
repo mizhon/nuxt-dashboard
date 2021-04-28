@@ -1,11 +1,7 @@
 <template>
   <div class="topbar-wrapper">
-    <div class="space-container">
-      <Space />
-    </div>
-    <div class="user-container">
-      <User />
-    </div>
+    <Space />
+    <User />
   </div>
 </template>
 <script>
@@ -22,7 +18,13 @@ export default {
 </script>
 <style lang="scss" scoped>
 .topbar-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
   position: fixed;
   width: 100%;
+  height: 70px;
+  background-color: green;
 }
 </style>
