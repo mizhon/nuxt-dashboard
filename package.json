@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "nuxt",
+    "dev": "nuxt -p 7000",
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
@@ -14,7 +14,11 @@
     "@nuxtjs/pwa": "^3.3.5",
     "core-js": "^3.9.1",
     "element-ui": "^2.15.1",
-    "nuxt": "^2.15.3"
+    "nprogress": "^0.2.0",
+    "nuxt": "^2.15.3",
+    "nuxt-i18n": "^6.26.0",
+    "sass-loader": "^11.0.1",
+    "vue-i18n": "^8.24.3"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^6.0.0",
