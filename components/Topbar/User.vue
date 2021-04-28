@@ -1,8 +1,8 @@
 <template>
-  <div>Sidebar</div>
+  <div class="user-container">User</div>
 </template>
 <script>
 export default {
-  name: 'Sidebar',
+  name: 'User',
 }
 </script>

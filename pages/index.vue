@@ -1,9 +1,11 @@
 <template>
-  <div class="container"></div>
+  <div class="container">page-1</div>
 </template>
 
 <script>
-export default {}
+export default {
+  layout: 'admin',
+}
 </script>
 
 <style>

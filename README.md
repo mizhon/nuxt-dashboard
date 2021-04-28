@@ -1,5 +1,8 @@
 # nuxt-dashboard
 
+## settings
+
+Use sass-loader@10.1.1. reason: https://stackoverflow.com/questions/66082397/typeerror-this-getoptions-is-not-a-function
 ## Build Setup
 
 ```bash

@@ -1,8 +1,8 @@
 <template>
-  <div>Sidebar</div>
+  <div class="space-container">Space</div>
 </template>
 <script>
 export default {
-  name: 'Sidebar',
+  name: 'Space',
 }
 </script>
