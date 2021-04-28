@@ -1,5 +1,5 @@
 <template>
-  <div class="space-container">Space</div>
+  <div class="space-container">Work Space</div>
 </template>
 <script>
 export default {

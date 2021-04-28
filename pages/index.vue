@@ -15,7 +15,7 @@ export default {
   align-items: center;
   text-align: center;
   margin-top: 70px;
-  background-color: red;
+  background-color: #f6f7f9;
   width: 100%;
   height: 100%;
 }

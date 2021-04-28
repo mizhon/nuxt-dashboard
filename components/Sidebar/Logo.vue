@@ -56,7 +56,7 @@ export default {
   background: #fff;
   text-align: center;
   overflow: hidden;
-  // box-shadow: 0 2px 9px -3px rgba(0,0,0,.2);
+  box-shadow: 0 2px 9px -3px rgba(0, 0, 0, 0.2);
   z-index: 101;
   & .sidebar-logo-link {
     height: 100%;

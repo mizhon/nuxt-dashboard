@@ -31,7 +31,7 @@ export default {
   display: flex;
   height: 100%;
   .app-sidebar {
-    background-color: yellow;
+    background-color: #fff;
   }
   .app-content {
     width: 100%;
