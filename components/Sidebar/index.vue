@@ -1,5 +1,5 @@
 <template>
-  <div class="sidebar">
+  <div class="sidebar" :class="isCollapse ? 'collapse' : ''">
     <Logo :collapse="isCollapse" />
     <el-scrollbar wrap-class="scrollbar-wrapper">
       <el-menu
@@ -34,7 +34,7 @@
           <i class="el-icon-menu"></i>
           <span slot="title">导航二</span>
         </el-menu-item>
-        <el-menu-item index="3" disabled>
+        <el-menu-item index="3">
           <i class="el-icon-document"></i>
           <span slot="title">导航三</span>
         </el-menu-item>
@@ -44,10 +44,15 @@
         </el-menu-item>
       </el-menu>
     </el-scrollbar>
-    <el-radio-group v-model="isCollapse" style="margin-bottom: 20px">
+    <el-switch
+      v-model="isCollapse"
+      active-color="#13ce66"
+      inactive-color="#ff4949"
+    />
+    <!-- <el-radio-group v-model="isCollapse" style="margin-bottom: 20px">
       <el-radio-button :label="false">展开</el-radio-button>
       <el-radio-button :label="true">收起</el-radio-button>
-    </el-radio-group>
+    </el-radio-group> -->
   </div>
 </template>
 <script>
@@ -80,9 +85,14 @@ export default {
   },
 }
 </script>
-<style>
-.el-menu-vertical-demo:not(.el-menu--collapse) {
+<style lang="scss" scoped>
+el-menu-vertical-demo:not(.el-menu--collapse) {
   width: 260px;
-  min-height: 400px;
+}
+
+.sidebar {
+  &.collapse {
+    width: 64px !important;
+  }
 }
 </style>

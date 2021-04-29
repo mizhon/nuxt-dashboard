@@ -81,6 +81,10 @@ export default {
   }
 
   &.collapse {
+    width: 64px;
+    // background-color: red;
+    // transition-duration: 0.2s;
+    // transform: translate3d(-$sideBarWidth, 0, 0);
     .sidebar-logo {
       margin-right: 0px;
     }
