@@ -27,6 +27,8 @@ export default {
     '~/assets/styles/main.scss',
     // reset element-ui styles
     '~/assets/styles/reset.scss',
+    // sidebar styles
+    '~/assets/styles/sidebar.scss',
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
@@ -73,5 +75,9 @@ export default {
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {},
+  build: {
+    styleResources: {
+      scss: './assets/styles/_vars.scss',
+    },
+  },
 }

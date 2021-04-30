@@ -1,1 +1,8 @@
 // reset element-ui styles here ...
+.el-breadcrumb {
+  .el-breadcrumb__item {
+    .el-breadcrumb__inner {
+      color: #909399;
+    }
+  }
+}
