@@ -43,7 +43,7 @@ export default {
     },
     key() {
       // eslint-disable-next-line no-console
-      console.log(this.$route.path, this.$route)
+      console.log(this.$route.path)
       return this.$route.path
     },
   },

@@ -10,8 +10,8 @@ const personal = [
     children: [
       {
         name: 'Profile',
-        path: 'profile',
-        component: () => import('@/pages/profile/index.vue'),
+        path: '',
+        component: () => import('@/pages/personal/profile/index.vue'),
         meta: {
           title: 'Profle',
           icon: 'el-icon-s-home',
@@ -24,8 +24,8 @@ const personal = [
     children: [
       {
         name: 'Coupon Center',
-        path: 'coupon',
-        component: () => import('@/pages/coupon/index.vue'),
+        path: '',
+        component: () => import('@/pages/personal/coupon/index.vue'),
         meta: {
           title: 'Coupon Center',
           icon: 'el-icon-s-home',
@@ -42,7 +42,7 @@ const enterprise = [
     children: [
       {
         path: 'dashboard',
-        component: () => import('@/pages/dashboard/index.vue'),
+        component: () => import('@/pages/enterprise/dashboard/index.vue'),
         name: 'Dashboard',
         meta: {
           title: 'Dashboard',
@@ -63,7 +63,7 @@ const enterprise = [
     children: [
       {
         path: '',
-        component: () => import('@/pages/meetings/overview.vue'),
+        component: () => import('@/pages/enterprise/meetings/overview.vue'),
         name: 'Meeting Management',
         meta: {
           title: 'Meeting Management',
@@ -84,7 +84,7 @@ const enterprise = [
     children: [
       {
         path: '',
-        component: () => import('@/pages/organizations/index.vue'),
+        component: () => import('@/pages/enterprise/organizations/index.vue'),
         name: 'Organizations',
         meta: {
           title: 'Organizations',
@@ -105,7 +105,7 @@ const enterprise = [
     children: [
       {
         path: '',
-        component: () => import('@/pages/system/index.vue'),
+        component: () => import('@/pages/enterprise/system/index.vue'),
         name: 'System',
         meta: {
           title: 'System',

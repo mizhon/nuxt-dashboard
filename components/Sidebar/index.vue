@@ -25,6 +25,7 @@
 <script>
 import { mapState } from 'vuex'
 import _vars from '@/assets/styles/_vars.scss'
+import { routes } from '@/utils/routes'
 import Logo from './Logo'
 import SidebarItem from './SidebarItem'
 
@@ -35,88 +36,10 @@ export default {
     SidebarItem,
   },
   data() {
+    // eslint-disable-next-line no-console
+    console.log(routes)
     return {
-      permissionRoutes: [
-        {
-          path: '/',
-          redirect: '/dashboard',
-          children: [
-            {
-              path: 'dashboard',
-              component: () => import('@/pages/dashboard/index.vue'),
-              name: 'Dashboard',
-              meta: {
-                title: 'Dashboard',
-                icon: 'el-icon-s-home',
-                affix: true,
-              },
-            },
-          ],
-        },
-        {
-          path: '/meetings',
-          redirect: 'noRedirect',
-          alwaysShow: true,
-          meta: {
-            title: 'Meeting Management',
-            icon: 'el-icon-monitor',
-          },
-          children: [
-            {
-              path: '',
-              component: () => import('@/pages/meetings/overview.vue'),
-              name: 'Meeting Management',
-              meta: {
-                title: 'Meeting Management',
-                affix: true,
-              },
-            },
-          ],
-        },
-        {
-          path: '/organizations',
-          redirect: 'noRedirect',
-          alwaysShow: true,
-          name: 'Organizations',
-          meta: {
-            title: 'Components',
-            icon: 'el-icon-monitor',
-          },
-          children: [
-            {
-              path: '',
-              component: () => import('@/pages/organizations/index.vue'),
-              name: 'Organizations',
-              meta: {
-                title: 'Organizations',
-                noCache: true,
-              },
-            },
-          ],
-        },
-        {
-          path: '/system',
-          redirect: 'noRedirect',
-          alwaysShow: true,
-          name: 'System',
-          meta: {
-            title: 'System',
-            icon: 'el-icon-monitor',
-          },
-          children: [
-            {
-              path: '',
-              // component: () => import('@/pages/system/index.vue'),
-              name: 'System',
-              meta: {
-                title: 'System',
-                icon: 'system',
-                noCache: true,
-              },
-            },
-          ],
-        },
-      ],
+      permissionRoutes: routes.personal,
     }
   },
   computed: {
