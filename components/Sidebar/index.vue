@@ -47,7 +47,7 @@ export default {
               name: 'Dashboard',
               meta: {
                 title: 'Dashboard',
-                icon: 'dashboard',
+                icon: 'el-icon-s-home',
                 affix: true,
               },
             },
@@ -62,7 +62,7 @@ export default {
               name: 'Meeting Management',
               meta: {
                 title: 'Meeting Management',
-                icon: 'meetings',
+                icon: 'el-icon-monitor',
                 affix: true,
               },
             },
