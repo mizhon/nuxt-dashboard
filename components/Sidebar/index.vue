@@ -55,6 +55,12 @@ export default {
         },
         {
           path: '/meetings',
+          redirect: 'noRedirect',
+          alwaysShow: true,
+          meta: {
+            title: 'Meeting Management',
+            icon: 'el-icon-monitor',
+          },
           children: [
             {
               path: '',
@@ -62,42 +68,54 @@ export default {
               name: 'Meeting Management',
               meta: {
                 title: 'Meeting Management',
-                icon: 'el-icon-monitor',
                 affix: true,
               },
             },
           ],
         },
-        // {
-        //   path: '/organizations',
-        //   children: [
-        //     {
-        //       path: '',
-        //       // component: () => import('@/pages/organizations/index.vue'),
-        //       name: 'Organizations',
-        //       meta: {
-        //         title: 'Organizations',
-        //         icon: 'organizations',
-        //         noCache: true,
-        //       },
-        //     },
-        //   ],
-        // },
-        // {
-        //   path: '/system',
-        //   children: [
-        //     {
-        //       path: '',
-        //       // component: () => import('@/pages/system/index.vue'),
-        //       name: 'System',
-        //       meta: {
-        //         title: 'System',
-        //         icon: 'system',
-        //         noCache: true,
-        //       },
-        //     },
-        //   ],
-        // },
+        {
+          path: '/organizations',
+          redirect: 'noRedirect',
+          alwaysShow: true,
+          name: 'Organizations',
+          meta: {
+            title: 'Components',
+            icon: 'el-icon-monitor',
+          },
+          children: [
+            {
+              path: '',
+              component: () => import('@/pages/organizations/index.vue'),
+              name: 'Organizations',
+              meta: {
+                title: 'Organizations',
+                noCache: true,
+              },
+            },
+          ],
+        },
+        {
+          path: '/system',
+          redirect: 'noRedirect',
+          alwaysShow: true,
+          name: 'System',
+          meta: {
+            title: 'System',
+            icon: 'el-icon-monitor',
+          },
+          children: [
+            {
+              path: '',
+              // component: () => import('@/pages/system/index.vue'),
+              name: 'System',
+              meta: {
+                title: 'System',
+                icon: 'system',
+                noCache: true,
+              },
+            },
+          ],
+        },
       ],
     }
   },
