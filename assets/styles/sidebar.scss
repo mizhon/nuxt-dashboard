@@ -92,11 +92,13 @@
 
   .hideSidebar {
     .sidebar-container {
-      width: 54px !important;
+      // width: 54px !important;
+      width: 80px !important;
     }
 
     .main-container {
-      margin-left: 54px;
+      // margin-left: 54px;
+      margin-left: 80px;
     }
 
     .submenu-title-noDropdown {

@@ -82,7 +82,8 @@ export default {
 
 // 设置折叠时的效果
 .hideSidebar .fixed-header {
-  width: calc(100% - 54px);
+  // width: calc(100% - 54px);
+  width: calc(100% - 80px);
 }
 
 .mobile .fixed-header {
