@@ -78,7 +78,7 @@ const enterprise = [
     alwaysShow: true,
     name: 'Organizations',
     meta: {
-      title: 'Components',
+      title: 'Organizations',
       icon: 'el-icon-monitor',
     },
     children: [
@@ -109,7 +109,6 @@ const enterprise = [
         name: 'System',
         meta: {
           title: 'System',
-          icon: 'system',
           noCache: true,
         },
       },

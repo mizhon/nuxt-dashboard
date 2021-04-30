@@ -26,6 +26,7 @@
 <script>
 export default {
   name: 'Breadcrumb',
+  props: {},
   data() {
     return {
       title: 'Demo Title',

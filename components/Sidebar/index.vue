@@ -39,7 +39,7 @@ export default {
     // eslint-disable-next-line no-console
     console.log(routes)
     return {
-      permissionRoutes: routes.personal,
+      permissionRoutes: routes.enterprise,
     }
   },
   computed: {
