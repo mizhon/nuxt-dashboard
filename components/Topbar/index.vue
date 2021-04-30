@@ -17,7 +17,9 @@ export default {
   },
   methods: {
     toggleSideBar() {
-      // this.$store.dispatch('app/toggleSideBar')
+      // eslint-disable-next-line no-console
+      console.log('trigger toggleSidebar')
+      this.$store.dispatch('app/toggleSideBar')
     },
   },
 }
@@ -40,7 +42,7 @@ export default {
 
     &:hover {
       color: #275edb;
-      background: rgba(0, 0, 0, 0.025);
+      background: rgba(0, 0, 0, 0.02);
     }
   }
 }

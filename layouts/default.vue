@@ -16,6 +16,7 @@
   </div>
 </template>
 <script>
+import { mapState } from 'vuex'
 import Sidebar from '@/components/Sidebar'
 import Topbar from '@/components/Topbar'
 import Breadcrumb from '@/components/common/Breadcrumb'
@@ -28,15 +29,21 @@ export default {
     Breadcrumb,
   },
   computed: {
+    ...mapState({
+      sidebar: (state) => state.app.sidebar,
+      device: (state) => state.app.device,
+    }),
     classObj() {
       return {
-        hideSidebar: false, // !this.sidebar.opened,
-        openSidebar: true, // this.sidebar.opened,
-        withoutAnimation: false, // this.sidebar.withoutAnimation,
+        hideSidebar: !this.sidebar.opened,
+        openSidebar: this.sidebar.opened,
+        withoutAnimation: this.sidebar.withoutAnimation,
         mobile: this.device === 'mobile',
       }
     },
     key() {
+      // eslint-disable-next-line no-console
+      console.log(this.$route.path, this.$route)
       return this.$route.path
     },
   },

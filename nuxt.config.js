@@ -35,6 +35,7 @@ export default {
   plugins: [
     '@/plugins/element-ui',
     { src: '@/plugins/nprogress.js', ssr: false },
+    { src: '@/plugins/svg-icon.js', ssr: false },
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components

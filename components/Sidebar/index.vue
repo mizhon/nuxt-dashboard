@@ -23,6 +23,7 @@
   </div>
 </template>
 <script>
+import { mapState } from 'vuex'
 import _vars from '@/assets/styles/_vars.scss'
 import Logo from './Logo'
 import SidebarItem from './SidebarItem'
@@ -34,8 +35,6 @@ export default {
     SidebarItem,
   },
   data() {
-    // eslint-disable-next-line no-console
-    console.log('_vars: --->', _vars)
     return {
       permissionRoutes: [
         {
@@ -44,43 +43,68 @@ export default {
           children: [
             {
               path: 'dashboard',
-              component: () => import('@/pages/index'),
+              component: () => import('@/pages/dashboard/index.vue'),
               name: 'Dashboard',
-              meta: { title: 'Dashboard', icon: 'dashboard', affix: true },
-            },
-          ],
-        },
-        {
-          path: '/documentation',
-          children: [
-            {
-              path: 'index',
-              component: () => import('@/pages/index'),
-              name: 'Documentation',
               meta: {
-                title: 'Documentation',
-                icon: 'documentation',
+                title: 'Dashboard',
+                icon: 'dashboard',
                 affix: true,
               },
             },
           ],
         },
         {
-          path: '/guide',
-          redirect: '/guide/index',
+          path: '/meetings',
           children: [
             {
-              path: 'index',
-              component: () => import('@/pages/index'),
-              name: 'Guide',
-              meta: { title: 'Guide', icon: 'guide', noCache: true },
+              path: '',
+              component: () => import('@/pages/meetings/overview.vue'),
+              name: 'Meeting Management',
+              meta: {
+                title: 'Meeting Management',
+                icon: 'meetings',
+                affix: true,
+              },
             },
           ],
         },
+        // {
+        //   path: '/organizations',
+        //   children: [
+        //     {
+        //       path: '',
+        //       // component: () => import('@/pages/organizations/index.vue'),
+        //       name: 'Organizations',
+        //       meta: {
+        //         title: 'Organizations',
+        //         icon: 'organizations',
+        //         noCache: true,
+        //       },
+        //     },
+        //   ],
+        // },
+        // {
+        //   path: '/system',
+        //   children: [
+        //     {
+        //       path: '',
+        //       // component: () => import('@/pages/system/index.vue'),
+        //       name: 'System',
+        //       meta: {
+        //         title: 'System',
+        //         icon: 'system',
+        //         noCache: true,
+        //       },
+        //     },
+        //   ],
+        // },
       ],
     }
   },
   computed: {
+    ...mapState({
+      sidebar: (state) => state.app.sidebar,
+    }),
     vars() {
       return _vars
     },
@@ -94,7 +118,7 @@ export default {
       return path
     },
     isCollapse() {
-      return false // !this.sidebar.opened
+      return !this.sidebar.opened
     },
   },
 }

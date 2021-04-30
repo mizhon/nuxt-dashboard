@@ -56,6 +56,7 @@ export default {
   .page-header {
     font-size: 24px;
     font-family: Helvetica;
+    font-weight: bold;
     color: #141414;
   }
 
