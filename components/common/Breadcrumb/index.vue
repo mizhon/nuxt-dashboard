@@ -15,7 +15,7 @@
       </transition-group>
     </el-breadcrumb> -->
     <div class="page-header">{{ title }}</div>
-    <div class="separator"></div>
+    <div class="separator" />
     <el-breadcrumb separator="/">
       <el-breadcrumb-item>Meeting Management</el-breadcrumb-item>
       <el-breadcrumb-item>Meeting Analystics</el-breadcrumb-item>

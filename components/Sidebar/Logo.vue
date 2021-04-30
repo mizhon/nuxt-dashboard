@@ -29,7 +29,7 @@ export default {
   },
   data() {
     return {
-      title: 'Matrx Admin',
+      title: 'Z-Design Admin',
       logo:
         'https://wpimg.wallstcn.com/69a1c46c-eb1c-4b46-8bd4-e9e686ef5251.png', // require('https://wpimg.wallstcn.com/69a1c46c-eb1c-4b46-8bd4-e9e686ef5251.png'),
     }
@@ -55,6 +55,7 @@ export default {
   text-align: center;
   overflow: hidden;
   box-shadow: 0 2px 9px -3px rgba(0, 0, 0, 0.2);
+  z-index: 100;
 
   & .sidebar-logo-link {
     height: 100%;

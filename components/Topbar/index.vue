@@ -1,9 +1,25 @@
 <template>
-  <div class="topbar"></div>
+  <div class="topbar">
+    <Hamburger
+      id="hamburger-container"
+      class="hamburger-container"
+      :is-active="true"
+      @toggleClick="toggleSideBar"
+    />
+  </div>
 </template>
 <script>
+import Hamburger from '@/components/common/Humburger'
 export default {
   name: 'Topbar',
+  components: {
+    Hamburger,
+  },
+  methods: {
+    toggleSideBar() {
+      // this.$store.dispatch('app/toggleSideBar')
+    },
+  },
 }
 </script>
 <style lang="scss" scoped>
@@ -13,5 +29,19 @@ export default {
   position: relative;
   background: #fff;
   box-shadow: 0 2px 9px -3px rgba(0, 0, 0, 0.2);
+
+  .hamburger-container {
+    line-height: 70px;
+    height: 100%;
+    float: left;
+    cursor: pointer;
+    transition: background 0.3s;
+    -webkit-tap-highlight-color: transparent;
+
+    &:hover {
+      color: #275edb;
+      background: rgba(0, 0, 0, 0.025);
+    }
+  }
 }
 </style>
