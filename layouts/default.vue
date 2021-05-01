@@ -7,10 +7,12 @@
         <Breadcrumb />
       </div>
       <section class="app-main">
-        <transition name="fade-transform" mode="out-in">
-          <!-- https://stackoverflow.com/questions/57531898/how-can-i-use-keep-alive-in-nuxt-js -->
-          <Nuxt :nuxt-child-key="key" keep-alive />
-        </transition>
+        <div class="page-container">
+          <transition name="fade-transform" mode="out-in">
+            <!-- https://stackoverflow.com/questions/57531898/how-can-i-use-keep-alive-in-nuxt-js -->
+            <Nuxt :nuxt-child-key="key" keep-alive />
+          </transition>
+        </div>
       </section>
     </div>
   </div>
@@ -77,6 +79,19 @@ export default {
     height: 100vh;
     position: relative;
     overflow: hidden;
+
+    .page-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: #f7f8fb;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
   }
 }
 

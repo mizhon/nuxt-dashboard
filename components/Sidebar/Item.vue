@@ -27,6 +27,8 @@ export default {
     if (title) {
       vnodes.push(<span slot="title">{title}</span>)
     }
+    // eslint-disable-next-line no-console
+    // console.log(vnodes)
     return vnodes
   },
 }

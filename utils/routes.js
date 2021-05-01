@@ -1,7 +1,7 @@
 /**
  * @desc: Used to store router settings for different workspace
- * - personal: persoanl user related router contents
- * - enterprise: enterprise user related router contents
+ * - PERSONAL: persoanl user related router contents
+ * - ENTERPRISE: enterprise user related router contents
  */
 
 const personal = [
@@ -37,11 +37,11 @@ const personal = [
 
 const enterprise = [
   {
-    path: '/',
-    redirect: '/dashboard',
+    path: '/enterprise/dashboard',
+    redirect: '/enterprise/dashboard',
     children: [
       {
-        path: 'dashboard',
+        path: '/enterprise/dashboard',
         component: () => import('@/pages/enterprise/dashboard/index.vue'),
         name: 'Dashboard',
         meta: {
@@ -62,7 +62,7 @@ const enterprise = [
     },
     children: [
       {
-        path: '',
+        path: '/enterprise/meetings/overview',
         component: () => import('@/pages/enterprise/meetings/overview.vue'),
         name: 'Meeting Management',
         meta: {
@@ -83,7 +83,7 @@ const enterprise = [
     },
     children: [
       {
-        path: '',
+        path: '/enterprise/organizations/',
         component: () => import('@/pages/enterprise/organizations/index.vue'),
         name: 'Organizations',
         meta: {
@@ -104,7 +104,7 @@ const enterprise = [
     },
     children: [
       {
-        path: '',
+        path: '/enterprise/system',
         component: () => import('@/pages/enterprise/system/index.vue'),
         name: 'System',
         meta: {

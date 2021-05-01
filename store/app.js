@@ -3,7 +3,7 @@
  */
 import Cookies from 'js-cookie'
 
-export const state = {
+export const state = () => ({
   sidebar: {
     opened: Cookies.get('sidebarStatus')
       ? !!+Cookies.get('sidebarStatus')
@@ -12,7 +12,7 @@ export const state = {
   },
   device: 'desktop',
   size: Cookies.get('size') || 'medium',
-}
+})
 
 export const mutations = {
   TOGGLE_SIDEBAR: (state) => {
