@@ -12,6 +12,7 @@
         <el-menu-item
           :index="resolvePath(onlyOneChild.path)"
           :class="{ 'submenu-title-noDropdown': !isNest }"
+          @click.native="handleClick(item)"
         >
           <Item
             :icon="onlyOneChild.meta.icon || (item.meta && item.meta.icon)"
@@ -104,6 +105,10 @@ export default {
         return this.basePath
       }
       return path.resolve(this.basePath, routePath)
+    },
+    handleClick(item) {
+      // eslint-disable-next-line no-console
+      console.log('el-menu-item: ', item)
     },
   },
 }

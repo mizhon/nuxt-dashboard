@@ -86,8 +86,7 @@
     & .el-submenu .el-menu-item {
       min-width: $sideBarWidth !important;
       background-color: $subMenuBg !important;
-      // 子菜单和父菜单对其
-      padding-left: 48px !important;
+      padding-left: 53px !important;
 
       &:hover {
         color: $subMenuActiveText !important;

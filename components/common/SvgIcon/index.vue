@@ -60,7 +60,7 @@ export default {
   overflow: hidden; */
   width: 18px;
   height: 18px;
-  vertical-align: -3px;
+  vertical-align: -5px;
   fill: currentColor;
   overflow: hidden;
 }

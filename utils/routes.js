@@ -38,7 +38,10 @@ const personal = [
 const enterprise = [
   {
     path: '/enterprise/dashboard',
-    redirect: '/enterprise/dashboard',
+    meta: {
+      title: 'Dashboard',
+      icon: 'ico-home',
+    },
     children: [
       {
         path: '/enterprise/dashboard',
@@ -47,14 +50,12 @@ const enterprise = [
         meta: {
           title: 'Dashboard',
           icon: 'ico-home',
-          affix: true,
         },
       },
     ],
   },
   {
     path: '/meetings',
-    redirect: 'noRedirect',
     alwaysShow: true,
     meta: {
       title: 'Meeting Management',
@@ -64,17 +65,34 @@ const enterprise = [
       {
         path: '/enterprise/meetings/overview',
         component: () => import('@/pages/enterprise/meetings/overview.vue'),
-        name: 'Meeting Management',
+        name: 'Overview',
         meta: {
-          title: 'Meeting Management',
-          affix: true,
+          title: 'Overview',
+          noCache: true,
+        },
+      },
+      {
+        path: '/enterprise/meetings/ongoing',
+        component: () => import('@/pages/enterprise/meetings/ongoing.vue'),
+        name: 'Ongoing',
+        meta: {
+          title: 'Ongoing',
+          noCache: true,
+        },
+      },
+      {
+        path: '/enterprise/meetings/upcoming',
+        component: () => import('@/pages/enterprise/meetings/upcoming.vue'),
+        name: 'Upcoming',
+        meta: {
+          title: 'Upcoming',
+          noCache: true,
         },
       },
     ],
   },
   {
     path: '/organizations',
-    redirect: 'noRedirect',
     alwaysShow: true,
     name: 'Organizations',
     meta: {
@@ -95,7 +113,6 @@ const enterprise = [
   },
   {
     path: '/system',
-    redirect: 'noRedirect',
     alwaysShow: true,
     name: 'System',
     meta: {
