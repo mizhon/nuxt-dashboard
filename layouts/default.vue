@@ -44,8 +44,6 @@ export default {
       }
     },
     key() {
-      // eslint-disable-next-line no-console
-      console.log(this.$route.path, this.$route)
       return this.$route.path
     },
   },

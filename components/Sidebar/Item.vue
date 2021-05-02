@@ -17,6 +17,7 @@ export default {
     const vnodes = []
 
     if (icon) {
+      // 如果是element-ui的内置icon
       if (icon.includes('el-icon')) {
         vnodes.push(<i class={[icon, 'sub-el-icon']} />)
       } else {

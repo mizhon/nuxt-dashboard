@@ -1,5 +1,7 @@
 // import en from '~/lang/en-us'
 // import zh from '~/lang/zh-cn'
+// eslint-disable-next-line nuxt/no-cjs-in-config
+const path = require('path')
 
 export default {
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
@@ -94,6 +96,19 @@ export default {
         minSize: 10000,
         maxSize: 250000,
       },
+    },
+    extend(config, ctx) {
+      const svgRule = config.module.rules.find((rule) => rule.test.test('.svg'))
+      svgRule.exclude = [path.resolve(__dirname, 'assets/icons')]
+      // Includes /icons/svg for svg-sprite-loader
+      config.module.rules.push({
+        test: /\.svg$/,
+        include: [path.resolve(__dirname, 'assets/icons')],
+        loader: 'svg-sprite-loader',
+        options: {
+          symbolId: 'icon-[name]',
+        },
+      })
     },
   },
 }

@@ -46,7 +46,7 @@ const enterprise = [
         name: 'Dashboard',
         meta: {
           title: 'Dashboard',
-          icon: 'el-icon-s-home',
+          icon: 'ico-home',
           affix: true,
         },
       },
@@ -58,7 +58,7 @@ const enterprise = [
     alwaysShow: true,
     meta: {
       title: 'Meeting Management',
-      icon: 'el-icon-monitor',
+      icon: 'ico-conference',
     },
     children: [
       {
@@ -79,7 +79,7 @@ const enterprise = [
     name: 'Organizations',
     meta: {
       title: 'Organizations',
-      icon: 'el-icon-monitor',
+      icon: 'ico-organizations',
     },
     children: [
       {
@@ -100,7 +100,7 @@ const enterprise = [
     name: 'System',
     meta: {
       title: 'System',
-      icon: 'el-icon-monitor',
+      icon: 'ico-system',
     },
     children: [
       {
