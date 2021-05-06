@@ -4,7 +4,8 @@
     <div class="selector">
       <el-dropdown trigger="click" placement="bottom-end">
         <span class="el-dropdown-link">
-          {{ currentWorspce }}
+          {{ currentWorkspace.name }}
+          <!-- {{ workspace.name }} -->
           <i class="el-icon-arrow-down el-icon--right"></i>
         </span>
         <el-dropdown-menu slot="dropdown" class="workspace-list">
@@ -22,6 +23,8 @@
   </div>
 </template>
 <script>
+import { mapState } from 'vuex'
+
 export default {
   name: 'Space',
   data() {
@@ -30,30 +33,46 @@ export default {
         {
           spaceId: 1,
           type: 'personal',
-          spaceName: 'My Space',
-          currentSpace: true,
+          spaceName: 'Test',
         },
         {
           spaceId: 2,
           type: 'enterprise',
           spaceName: 'Sun Rise',
-          currentSpace: false,
         },
       ],
     }
   },
   computed: {
-    currentWorspce() {
-      return this.workspaceList[0].spaceName
+    ...mapState({
+      workspace: (state) => state.user.space,
+    }),
+    currentWorkspace: {
+      get() {
+        // eslint-disable-next-line no-console
+        console.log('get', this.workspace)
+        return this.workspace
+      },
+      set(val) {
+        // todo
+        // eslint-disable-next-line no-console
+        this.$store.commit('user/SET_USER_SPACE', val)
+        console.log('set: ', val.name)
+      },
     },
   },
   methods: {
     switchWorkSpace(item) {
+      const space = {
+        name: item.spaceName,
+        type: item.type,
+      }
       // eslint-disable-next-line no-console
-      console.log('testing', item)
-      // if (item.spaceName !== this.currentWorspce) {
-      //   item.
-      // }
+      console.log('switch space: --->', space)
+      this.currentWorkspace = space
+      this.$store.commit('user/SET_USER_SPACE', space)
+      // eslint-disable-next-line no-console
+      console.log('switch space: --->', this.$store.state.user)
     },
   },
 }

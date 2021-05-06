@@ -31,13 +31,16 @@ export default {
     '~/assets/styles/reset.scss',
     // sidebar styles
     '~/assets/styles/sidebar.scss',
+    // transition style
+    '~/assets/styles/transition.scss',
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     '@/plugins/element-ui',
-    { src: '@/plugins/nprogress.js', ssr: false },
-    { src: '@/plugins/svg-icon.js', ssr: false },
+    { src: '@/plugins/app-init.js', mode: 'client' },
+    { src: '@/plugins/nprogress.js', mode: 'client' },
+    { src: '@/plugins/svg-icon.js', mode: 'client' },
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -53,6 +56,7 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
+    '@nuxtjs/axios',
     // https://i18n.nuxtjs.org/basic-usage
     [
       'nuxt-i18n',
@@ -69,6 +73,10 @@ export default {
       },
     ],
   ],
+
+  router: {
+    // middleware: ['permission'],
+  },
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {

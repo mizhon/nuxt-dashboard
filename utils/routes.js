@@ -38,8 +38,10 @@ const personal = [
 const enterprise = [
   {
     path: '/enterprise/dashboard',
+    name: 'Dashboard',
     meta: {
       title: 'Dashboard',
+      level: ['Dashboard'],
       icon: 'ico-home',
     },
     children: [
@@ -49,6 +51,8 @@ const enterprise = [
         name: 'Dashboard',
         meta: {
           title: 'Dashboard',
+          // breadcrumb 层级关系
+          level: ['Dashboard'],
           icon: 'ico-home',
         },
       },
@@ -57,6 +61,7 @@ const enterprise = [
   {
     path: '/meetings',
     alwaysShow: true,
+    name: 'Meeting Management',
     meta: {
       title: 'Meeting Management',
       icon: 'ico-conference',
@@ -68,6 +73,8 @@ const enterprise = [
         name: 'Overview',
         meta: {
           title: 'Overview',
+          // breadcrumb 层级关系
+          level: ['Meeting Management', 'Overview'],
           noCache: true,
         },
       },
@@ -77,6 +84,8 @@ const enterprise = [
         name: 'Ongoing',
         meta: {
           title: 'Ongoing',
+          // breadcrumb 层级关系
+          level: ['Meeting Management', 'Ongoing'],
           noCache: true,
         },
       },
@@ -86,6 +95,7 @@ const enterprise = [
         name: 'Upcoming',
         meta: {
           title: 'Upcoming',
+          level: ['Meeting Management', 'Upcoming'],
           noCache: true,
         },
       },
@@ -106,6 +116,7 @@ const enterprise = [
         name: 'Organizations',
         meta: {
           title: 'Organizations',
+          level: ['Organizations', 'test'],
           noCache: true,
         },
       },
@@ -126,6 +137,7 @@ const enterprise = [
         name: 'System',
         meta: {
           title: 'System',
+          level: ['System', 'test1'],
           noCache: true,
         },
       },

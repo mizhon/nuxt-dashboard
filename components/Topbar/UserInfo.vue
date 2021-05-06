@@ -101,8 +101,6 @@ export default {
   },
   methods: {
     toggleUserInfo() {
-      // eslint-disable-next-line no-console
-      console.log('testing ...')
       this.showUserInfo = !this.showUserInfo
     },
   },

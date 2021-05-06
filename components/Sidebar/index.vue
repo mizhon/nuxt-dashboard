@@ -37,7 +37,7 @@ export default {
   },
   data() {
     // eslint-disable-next-line no-console
-    console.log(routes)
+    console.log('[Sidebar]', routes)
     return {
       permissionRoutes: routes.enterprise,
     }

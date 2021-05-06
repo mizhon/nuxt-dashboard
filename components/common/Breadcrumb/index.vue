@@ -1,35 +1,41 @@
 <template>
   <div class="breadcrumb-container">
-    <div class="page-header">{{ pageTitle }}</div>
-    <div class="separator" />
-    <el-breadcrumb separator="/">
-      <!-- <el-breadcrumb-item v-for="(item, index) in levelList" :key="index">
-        {{  }}
-      </el-breadcrumb-item> -->
-      <el-breadcrumb-item>Meeting Management</el-breadcrumb-item>
-      <el-breadcrumb-item>Meeting Analystics</el-breadcrumb-item>
-    </el-breadcrumb>
+    <div class="page-header">{{ breadcrumb.name }}</div>
+    <template v-if="breadcrumb.level.length > 1">
+      <div class="separator" />
+      <el-breadcrumb separator="/">
+        <!-- <transition-group name="breadcrumb">
+          <el-breadcrumb-item
+            v-for="(item, index) in breadcrumb.level"
+            :key="index + 1"
+          >
+            {{ item }}
+          </el-breadcrumb-item>
+        </transition-group> -->
+        <el-breadcrumb-item
+          v-for="(item, index) in breadcrumb.level"
+          :key="index"
+        >
+          {{ item }}
+        </el-breadcrumb-item>
+      </el-breadcrumb>
+    </template>
   </div>
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 export default {
   name: 'Breadcrumb',
   props: {},
   data() {
-    return {
-      pageTitle: 'Demo Title',
-      levelList: null,
-    }
+    return {}
   },
-  methods: {
-    getBreadcrumb() {
-      this.levelList = [
-        {
-          meta: 'Dashboard',
-        },
-      ]
-    },
+  computed: {
+    ...mapState({
+      breadcrumb: (state) => state.app.breadcrumb,
+    }),
   },
 }
 </script>

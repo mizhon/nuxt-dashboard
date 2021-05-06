@@ -12,6 +12,11 @@ export const state = () => ({
   },
   device: 'desktop',
   size: Cookies.get('size') || 'medium',
+  // 面包屑的初始值为空，在@pulgin/app-init中赋值
+  breadcrumb: {
+    name: '',
+    level: [],
+  },
 })
 
 export const mutations = {
@@ -34,6 +39,9 @@ export const mutations = {
   SET_SIZE: (state, size) => {
     state.size = size
     Cookies.set('size', size)
+  },
+  SET_BREADCRUMB: (state, breadcrumb) => {
+    state.breadcrumb = breadcrumb
   },
 }
 

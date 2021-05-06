@@ -3,10 +3,6 @@
 </template>
 <script>
 export default {
-  middleware: [
-    // function ({ redirect }) {
-    //   redirect('/browse/songs/new')
-    // },
-  ],
+  middleware: [],
 }
 </script>

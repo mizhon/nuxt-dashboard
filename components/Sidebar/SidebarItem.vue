@@ -106,9 +106,13 @@ export default {
       }
       return path.resolve(this.basePath, routePath)
     },
+    // 处理将当前激活的路由信息存储至store中
     handleClick(item) {
-      // eslint-disable-next-line no-console
-      console.log('el-menu-item: ', item)
+      const breadcrumb = {
+        name: item.meta.title,
+        level: item.meta.level,
+      }
+      this.$store.commit('app/SET_BREADCRUMB', breadcrumb)
     },
   },
 }

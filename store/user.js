@@ -32,13 +32,14 @@ export const mutations = {
   SET_USER_SPACE(state, userInfo) {
     // todo
     state.space = {
-      name: '',
-      type: '',
+      name: 'Test',
+      type: 'personal',
     }
   },
   // 根据用户信息判断用户能访问的router列表
-  SET_USER_ROUTERS(state, userInfo) {
+  SET_USER_ROUTERS(state, type) {
     // todo
+    // state.space
   },
 }
 
