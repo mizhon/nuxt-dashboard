@@ -33,6 +33,7 @@ export default {
   name: 'Sidebar',
   components: {
     Logo,
+    // eslint-disable-next-line vue/no-unused-components
     SidebarItem,
   },
   data() {

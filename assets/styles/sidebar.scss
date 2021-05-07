@@ -72,6 +72,7 @@
     .el-submenu__title {
       font-weight: bold;
       background-color: #fff !important;
+      margin: 10px 10px 0 10px;
       &:hover {
         color: $subMenuActiveText !important;
         background-color: $menuHover !important;
@@ -115,8 +116,8 @@
         padding: 0 !important;
 
         .svg-icon {
-          // margin-left: 20px;
-          margin-left: 30px;
+          margin-left: 20px;
+          // margin-left: 30px;
         }
 
         .sub-el-icon {
@@ -134,8 +135,8 @@
         padding: 0 !important;
 
         .svg-icon {
-          // margin-left: 20px;
-          margin-left: 30px;
+          margin-left: 20px;
+          // margin-left: 30px;
         }
 
         .sub-el-icon {

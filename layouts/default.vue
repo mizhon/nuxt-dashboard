@@ -27,6 +27,7 @@ export default {
   name: 'Default',
   components: {
     Sidebar,
+    // eslint-disable-next-line vue/no-unused-components
     Topbar,
     Breadcrumb,
   },
