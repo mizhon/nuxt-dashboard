@@ -1,5 +1,7 @@
 // import en from '~/lang/en-us'
 // import zh from '~/lang/zh-cn'
+// eslint-disable-next-line nuxt/no-cjs-in-config
+const path = require('path')
 
 export default {
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
@@ -27,12 +29,18 @@ export default {
     '~/assets/styles/main.scss',
     // reset element-ui styles
     '~/assets/styles/reset.scss',
+    // sidebar styles
+    '~/assets/styles/sidebar.scss',
+    // transition style
+    '~/assets/styles/transition.scss',
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     '@/plugins/element-ui',
-    { src: '@/plugins/nprogress.js', ssr: false },
+    { src: '@/plugins/app-init.js', mode: 'client' },
+    { src: '@/plugins/nprogress.js', mode: 'client' },
+    { src: '@/plugins/svg-icon.js', mode: 'client' },
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -48,6 +56,7 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
+    '@nuxtjs/axios',
     // https://i18n.nuxtjs.org/basic-usage
     [
       'nuxt-i18n',
@@ -65,6 +74,10 @@ export default {
     ],
   ],
 
+  router: {
+    // middleware: ['permission'],
+  },
+
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {
     manifest: {
@@ -73,5 +86,37 @@ export default {
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {},
+  build: {
+    extractCSS: true,
+    styleResources: {
+      scss: './assets/styles/_vars.scss',
+    },
+    babel: {
+      plugins: [
+        [
+          'component',
+          { libraryName: 'element-ui', styleLibraryName: 'theme-chalk' },
+        ],
+      ],
+    },
+    optimization: {
+      splitChunks: {
+        minSize: 10000,
+        maxSize: 250000,
+      },
+    },
+    extend(config, ctx) {
+      const svgRule = config.module.rules.find((rule) => rule.test.test('.svg'))
+      svgRule.exclude = [path.resolve(__dirname, 'assets/icons')]
+      // Includes /icons/svg for svg-sprite-loader
+      config.module.rules.push({
+        test: /\.svg$/,
+        include: [path.resolve(__dirname, 'assets/icons')],
+        loader: 'svg-sprite-loader',
+        options: {
+          symbolId: 'icon-[name]',
+        },
+      })
+    },
+  },
 }

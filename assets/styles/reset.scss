@@ -1,1 +1,15 @@
 // reset element-ui styles here ...
+
+// set breadcrumb inner text color
+.el-breadcrumb {
+  .el-breadcrumb__item {
+    .el-breadcrumb__inner {
+      color: #909399;
+    }
+  }
+}
+
+// reset npgrogress style here ...
+#nprogress .bar {
+  background: #275edb !important;
+}

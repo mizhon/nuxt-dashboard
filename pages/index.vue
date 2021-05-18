@@ -1,4 +1,5 @@
 <template>
+<<<<<<< HEAD
   <div class="tabs-group">
     <section v-for="(tab, idx) in tabs" :key="idx">
       <div class="tab-warpper">
@@ -6,10 +7,13 @@
       </div>
     </section>
   </div>
+=======
+  <div></div>
+>>>>>>> 4b9096bd2def1d1514223f10dc697d086fdab13a
 </template>
-
 <script>
 export default {
+<<<<<<< HEAD
   layout: 'admin',
   data() {
     return {
@@ -41,3 +45,8 @@ export default {
   }
 }
 </style>
+=======
+  middleware: 'redirect',
+}
+</script>
+>>>>>>> 4b9096bd2def1d1514223f10dc697d086fdab13a

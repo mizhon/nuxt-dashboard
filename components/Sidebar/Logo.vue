@@ -7,20 +7,17 @@
         class="sidebar-logo-link"
         to=""
       >
-        <img v-if="logo" :src="logo" class="sidebar-logo" />
-        <h1 v-else class="sidebar-title">
-          {{ title }}
-        </h1>
+        <img :src="logo" class="sidebar-logo" />
+        <h1 class="sidebar-title">{{ title }}</h1>
       </router-link>
       <router-link v-else key="expand" class="sidebar-logo-link" to="">
         <img v-if="logo" :src="logo" class="sidebar-logo" />
-        <h1 class="sidebar-title">
-          {{ title }}
-        </h1>
+        <h1 class="sidebar-title">{{ title }}</h1>
       </router-link>
     </transition>
   </div>
 </template>
+
 <script>
 export default {
   name: 'Logo',
@@ -32,8 +29,9 @@ export default {
   },
   data() {
     return {
-      title: 'Z-Design',
-      logo: require('@/assets/images/logo.svg'), // logo image
+      title: 'Z-Design Admin',
+      logo:
+        'https://wpimg.wallstcn.com/69a1c46c-eb1c-4b46-8bd4-e9e686ef5251.png', // require('https://wpimg.wallstcn.com/69a1c46c-eb1c-4b46-8bd4-e9e686ef5251.png'),
     }
   },
 }
@@ -50,32 +48,34 @@ export default {
 
 .sidebar-logo-container {
   position: relative;
-  width: 260px;
+  width: 100%;
   height: 70px;
   line-height: 70px;
   background: #fff;
   text-align: center;
   overflow: hidden;
   box-shadow: 0 2px 9px -3px rgba(0, 0, 0, 0.2);
-  z-index: 101;
+  z-index: 100;
+
   & .sidebar-logo-link {
     height: 100%;
     width: 100%;
 
     & .sidebar-logo {
-      width: 48px;
-      height: 48px;
+      width: 32px;
+      height: 32px;
       vertical-align: middle;
-      margin-right: 5px;
+      margin-right: 12px;
     }
 
     & .sidebar-title {
       display: inline-block;
+      margin: 0;
       color: #333;
-      font-weight: bold;
-      line-height: 30px;
-      font-size: 18px;
-      font-family: RobotoCondensed-Bold;
+      font-weight: 600;
+      line-height: 50px;
+      font-size: 14px;
+      font-family: Avenir, Helvetica Neue, Arial, Helvetica, sans-serif;
       vertical-align: middle;
     }
   }

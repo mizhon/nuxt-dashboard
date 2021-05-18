@@ -4,9 +4,7 @@
     <div v-show="$nuxt.isOffline" class="app__offline">
       <!-- {{ offlineNotification }} -->
     </div>
-    <section class="app-sidebar">
-      <Sidebar />
-    </section>
+    <Sidebar />
     <section class="app-content">
       <Topbar />
       <div class="main-content">
