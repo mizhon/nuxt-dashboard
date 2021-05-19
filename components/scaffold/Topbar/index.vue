@@ -7,7 +7,6 @@
       @toggleClick="toggleSideBar"
     />
     <section class="op-container">
-      <Space />
       <UserInfo />
     </section>
   </div>
@@ -15,14 +14,12 @@
 <script>
 import { mapState } from 'vuex'
 import Hamburger from '@/components/common/Humburger'
-import Space from '@/components/Topbar/Space'
 import UserInfo from '@/components/Topbar/UserInfo'
 
 export default {
   name: 'Topbar',
   components: {
     Hamburger,
-    Space,
     UserInfo,
   },
   computed: {
