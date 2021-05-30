@@ -1,27 +1,37 @@
 <template>
-  <div class="layout-container">
-    <!-- offline notificaiton -->
-    <div v-show="$nuxt.isOffline" class="app__offline">
-      <!-- {{ offlineNotification }} -->
-    </div>
-    <Sidebar />
-    <section class="app-content">
-      <Topbar />
-      <div class="main-content">
-        <nuxt />
+  <div class="app-wrapper" :class="classObj">
+    <!-- Sidebar Container -->
+    <SideNavbar class="sidebar-container" />
+    <div class="main-container">
+      <div class="fixed-header">
+        <TopNavbar />
       </div>
-    </section>
+      <section class="app-main">
+        <div class="page-header">
+          <!-- 页面导航展示 -->
+          <Breadcrumb />
+        </div>
+        <transition name="fade-transform" mode="out-in">
+          <Nuxt :nuxt-child-key="key" />
+        </transition>
+      </section>
+      <el-backtop target=".app-main" />
+    </div>
   </div>
 </template>
 <script>
-import Sidebar from '@/components/Sidebar'
-import Topbar from '@/components/Topbar'
+import SideNavbar from '@/components/Sidebar'
+import TopNavbar from '@/components/Topbar'
+import Breadcrumb from '@/components/common/Breadcrumb'
+import ResizeMixin from '@/mixins/resize-handler'
 
 export default {
   components: {
-    Sidebar,
-    Topbar,
+    SideNavbar,
+    TopNavbar,
+    Breadcrumb,
   },
+  mixins: [ResizeMixin],
 }
 </script>
 <style lang="scss" scoped>
