@@ -1,3 +1,3 @@
 <template>
-  <div>Overview</div>
+  <div>meetings</div>
 </template>

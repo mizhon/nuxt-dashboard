@@ -19,20 +19,6 @@ const personal = [
       },
     ],
   },
-  {
-    path: '/coupon',
-    children: [
-      {
-        name: 'Coupon Center',
-        path: '',
-        component: () => import('@/pages/personal/coupon/index.vue'),
-        meta: {
-          title: 'Coupon Center',
-          icon: 'el-icon-s-home',
-        },
-      },
-    ],
-  },
 ]
 
 const enterprise = [
@@ -58,49 +44,49 @@ const enterprise = [
       },
     ],
   },
-  {
-    path: '/meetings',
-    alwaysShow: true,
-    name: 'Meeting Management',
-    meta: {
-      title: 'Meeting Management',
-      icon: 'ico-conference',
-    },
-    children: [
-      {
-        path: '/enterprise/meetings/overview',
-        component: () => import('@/pages/enterprise/meetings/overview.vue'),
-        name: 'Overview',
-        meta: {
-          title: 'Overview',
-          // breadcrumb 层级关系
-          level: ['Meeting Management', 'Overview'],
-          noCache: true,
-        },
-      },
-      {
-        path: '/enterprise/meetings/ongoing',
-        component: () => import('@/pages/enterprise/meetings/ongoing.vue'),
-        name: 'Ongoing',
-        meta: {
-          title: 'Ongoing',
-          // breadcrumb 层级关系
-          level: ['Meeting Management', 'Ongoing'],
-          noCache: true,
-        },
-      },
-      {
-        path: '/enterprise/meetings/upcoming',
-        component: () => import('@/pages/enterprise/meetings/upcoming.vue'),
-        name: 'Upcoming',
-        meta: {
-          title: 'Upcoming',
-          level: ['Meeting Management', 'Upcoming'],
-          noCache: true,
-        },
-      },
-    ],
-  },
+  // {
+  //   path: '/meetings',
+  //   alwaysShow: true,
+  //   name: 'Meeting Management',
+  //   meta: {
+  //     title: 'Meeting Management',
+  //     icon: 'ico-conference',
+  //   },
+  //   children: [
+  //     {
+  //       path: '/enterprise/meetings/overview',
+  //       component: () => import('@/pages/enterprise/meetings/overview.vue'),
+  //       name: 'Overview',
+  //       meta: {
+  //         title: 'Overview',
+  //         // breadcrumb 层级关系
+  //         level: ['Meeting Management', 'Overview'],
+  //         noCache: true,
+  //       },
+  //     },
+  //     {
+  //       path: '/enterprise/meetings/ongoing',
+  //       component: () => import('@/pages/enterprise/meetings/ongoing.vue'),
+  //       name: 'Ongoing',
+  //       meta: {
+  //         title: 'Ongoing',
+  //         // breadcrumb 层级关系
+  //         level: ['Meeting Management', 'Ongoing'],
+  //         noCache: true,
+  //       },
+  //     },
+  //     {
+  //       path: '/enterprise/meetings/upcoming',
+  //       component: () => import('@/pages/enterprise/meetings/upcoming.vue'),
+  //       name: 'Upcoming',
+  //       meta: {
+  //         title: 'Upcoming',
+  //         level: ['Meeting Management', 'Upcoming'],
+  //         noCache: true,
+  //       },
+  //     },
+  //   ],
+  // },
   {
     path: '/organizations',
     alwaysShow: true,

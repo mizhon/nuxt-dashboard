@@ -20,34 +20,44 @@
   </div>
 </template>
 <script>
+import { mapState } from 'vuex'
 import SideNavbar from '@/components/Sidebar'
 import TopNavbar from '@/components/Topbar'
 import Breadcrumb from '@/components/common/Breadcrumb'
 import ResizeMixin from '@/mixins/resize-handler'
 
 export default {
+  name: 'Admin',
   components: {
     SideNavbar,
     TopNavbar,
     Breadcrumb,
   },
   mixins: [ResizeMixin],
+  computed: {
+    ...mapState({
+      sidebar: (state) => state.app.sidebar,
+      device: (state) => state.app.device,
+    }),
+    classObj() {
+      return {
+        hideSidebar: !this.sidebar.opened,
+        openSidebar: this.sidebar.opened,
+        withoutAnimation: this.sidebar.withoutAnimation,
+        mobile: this.device === 'mobile',
+      }
+    },
+    key() {
+      return this.$route.path
+    },
+  },
 }
 </script>
 <style lang="scss" scoped>
-.layout-container {
-  display: flex;
+.app-wrapper {
+  position: relative;
+  width: 100%;
   height: 100%;
-  .app-sidebar {
-    background-color: #fff;
-  }
-  .app-content {
-    width: 100%;
-    height: 100%;
-
-    .main-content {
-      height: calc(100% - 70px);
-    }
-  }
+  background-color: #f7f8fb;
 }
 </style>
