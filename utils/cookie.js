@@ -46,6 +46,27 @@ export function removeCookieWithDomain(name, domain) {
   Cookies.remove(name, { domain })
 }
 
+export function getCookieDomain() {
+  let domain = getDomainName()
+  if (domain.includes('.') && !domain.startsWith('.')) {
+    domain = '.' + domain
+  }
+
+  return domain
+}
+
+/**
+ * 设置当前域名
+ * @returns 域名: www.example.com -> .example.com
+ */
+export function getDomainName() {
+  if (process.server) {
+    return ''
+  }
+  const domainName = window.location.hostname.split('.').slice(-2).join('.')
+  return domainName
+}
+
 /** ----------------------- 基础方法 ----------------------- */
 // 加密
 export function getAES(data) {
